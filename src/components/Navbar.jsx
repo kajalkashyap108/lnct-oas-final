@@ -93,7 +93,7 @@ const Navbar = () => {
   const drawerContent = (
     <Box sx={{ width: 250, height: "100%", display: "flex", flexDirection: "column" }}>
       <Box sx={{ p: 2 }}>
-        <Typography variant="h6">Test App</Typography>
+        <Typography variant="h6"></Typography>
       </Box>
       <Divider />
       <List sx={{ flexGrow: 1 }}>
@@ -155,7 +155,7 @@ const Navbar = () => {
             </IconButton>
           )}
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Test App
+            LNCT OAS
           </Typography>
         </Toolbar>
       </AppBar>

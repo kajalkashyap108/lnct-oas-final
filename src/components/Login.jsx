@@ -59,7 +59,7 @@ const Login = () => {
     <Box display="flex" justifyContent="center" mt={4}>
       <Paper elevation={3} sx={{ p: 4, maxWidth: 400, width: "100%" }}>
         <Typography variant="h5" align="center" gutterBottom>
-          Test App
+          
         </Typography>
         <Tabs value={tab} onChange={(e, newValue) => setTab(newValue)} centered>
           <Tab label="Sign In" />
