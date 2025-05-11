@@ -29,20 +29,40 @@ const TestsPage = () => {
   };
 
   return (
-    <Box sx={{ p: 3 }}>
+    <Box sx={{ p: 3, maxWidth: "100%", overflowX: "hidden" }}>
       <Typography variant="h4" gutterBottom>
         Available Tests
       </Typography>
       {tests.length === 0 ? (
         <Typography>No tests available.</Typography>
       ) : (
-        <List>
+        <List sx={{ maxWidth: "100%" }}>
           {tests.map((test) => (
-            <ListItem key={test.id} divider>
-              <ListItemText primary={test.title} />
+            <ListItem
+              key={test.id}
+              divider
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                maxWidth: "100%",
+                flexWrap: "wrap",
+              }}
+            >
+              <ListItemText
+                primary={test.title}
+                sx={{
+                  flex: "1 1 auto",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  mr: 2,
+                }}
+              />
               <Button
                 variant="contained"
                 onClick={() => handleTakeTest(test.id)}
+                sx={{ flexShrink: 0 }}
               >
                 Take Test
               </Button>

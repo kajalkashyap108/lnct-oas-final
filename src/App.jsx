@@ -9,6 +9,7 @@ import AdminDashboard from "./components/AdminDashboard";
 import TestPage from "./components/TestPage";
 import ResultsPage from "./components/ResultsPage";
 import ProtectedRoute from "./components/ProtectedRoute";
+import "./App.css"; // Ensure CSS is imported
 
 function AppContent() {
   const location = useLocation();
@@ -20,6 +21,9 @@ function AppContent() {
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
+        width: "100%", // Constrain width
+        maxWidth: "100%", // Prevent overflow
+        overflowX: "hidden", // Prevent horizontal scroll
       }}
     >
       <Navbar />
@@ -30,7 +34,9 @@ function AppContent() {
           p: 3,
           mt: "64px",
           ml: isExcludedRoute ? 0 : { xs: 0, sm: "250px" },
-          width: "100%",
+          width: isExcludedRoute ? "100%" : { xs: "100%", sm: "calc(100% - 250px)" }, // Adjust width for sidebar
+          maxWidth: "100%", // Prevent overflow
+          overflowX: "hidden", // Prevent horizontal scroll
         }}
       >
         <Routes>
